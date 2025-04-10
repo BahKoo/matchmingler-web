@@ -1,22 +1,71 @@
 ---
 layout: default
-title: Neat Starter
-path: home
+title: MatchMinger
 ---
 
-<div class="container mx-auto lg:h-screen flex flex-col justify-center items-center">
-  <h1>
-    Welcome to
-    <strong class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
-      {{title}}
-    </strong>
-  </h1>
+<header>
+  <div class="splash">
+    <img src="/img/ball.svg" class="slideInLeft" />
+    <div>
+      <h1>Play Pickleball.</h1>
+      <h1>Meet People.</h1>
+      <h1>Have Fun!</h1>
+      <div class="revealLeft"></div>
+    </div>
+  </div>
+  <h4>
+    We host pickleball events for people of all ages and skill levels!
+  </h4>
+</header>
 
-  <p>
-    <abbr title="netlify cms, eleventy, alpine js & tailwind css">NEAT</abbr>
-    Starter Template. Get Started by editing.
-    <code class="bg-gray-100 text-blue-800 p-1">/index.njk</code>
-  </p>
+<main class="container">
 
-  {% include "./_includes/partials/content.html" %}
-</div>
+  <div class="events">
+
+    <a href="/singles-mingle">
+      <div class="event bg3">
+        <img src="/img/logo-singles-mingle.svg" />
+      </div>
+    </a>
+    <div>
+      <div>
+        <h3>Singles Mingle</h3>
+        <p>
+          Are you single? Meet people in a fun environment. No pickleball experience is necessary.
+        </p>
+        <p><a href="/singles-mingle">Learn More</a></p>
+      </div>
+    </div>
+
+    <a href="/awesome-twosome">
+      <div class="event bg1">
+        <img src="/img/logo-awesome-twosome.svg" />
+      </div>
+    </a>
+    <div>
+      <div>
+        <h3>Awesome Twosome</h3>
+        <p>A fun tournament for people of all ages!</p>
+        <p><a href="/awesome-twosome">Learn More</a></p>
+      </div>
+    </div>
+
+    <a href="/classic-bracket">
+      <div class="event bg2">
+        <img src="/img/logo-classic-bracket.svg" />
+      </div>
+    </a>
+    <div>
+      <div>
+        <h3>Classic Bracket</h3>
+        <p>
+          A traditional tournament bracket. A wide range of skill levels are accomodated.
+        </p>
+        <p><a href="/classic-bracket">Learn More</a></p>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+<footer></footer>

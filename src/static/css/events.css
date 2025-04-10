@@ -1,0 +1,19 @@
+.narrow {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .narrow {
+    display: revert;
+    white-space: nowrap;
+  }
+  .wide {
+    display: none;
+  }
+  th, td {
+    padding: calc(var(--pico-spacing)/2) calc(var(--pico-spacing)/2);
+  }
+}
+[data-tooltip]:not(a, button, input) {
+  border-bottom: unset;
+}

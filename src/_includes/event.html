@@ -1,0 +1,81 @@
+---
+layout: default
+title: Event | Match Mingler
+---
+
+<main class="container">
+
+  <hgroup>
+    <h1>{{ title }}</h1>
+    <p>{{ day }}, {{ year }} - {{ time }}</p>
+  </hgroup>      
+     
+  <table class="info">
+    <tr>
+      <td>Date</td>
+      <td>{{ day }}, {{ year }}</td>
+    </tr>
+    <tr>
+      <td>Time</td>
+      <td>
+        {{ time }}
+        <small> ({{ timeNotes }})</small>              
+      </td>
+    </tr>
+    <tr>
+      <td>Location</td>
+      <td>
+        {{ location }}
+        <small> (Exact Location will be given after you express interest)</small>
+      </td>
+    </tr>
+    <tr>
+      <td>Event Type</td>
+      <td><a href="/classic-bracket">Classic Bracket</a></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+        {{ gender }}
+        {% if genderNotes %}<small> ({{ genderNotes }})</small>{% endif %}
+      </td>
+    </tr>
+    <tr>
+      <td>Level</td>
+      <td>{{ level }}</td>
+    </tr>
+    <tr>
+      <td>Age</td>
+      <td>
+        {{ age }}
+        {% if ageNotes %}<small> ({{ ageNotes }})</small>{% endif %}         
+      </td>
+    </tr>
+    <tr>
+      <td>Number Of Teams</td>
+      <td>{{ numberOfTeams }}</td>
+    </tr>
+    {% if format %}
+    <tr>
+      <td>Format</td>
+      <td>
+        {% for formatLine in format %}
+          <div>{{ formatLine }}</div>
+        {% endfor %}        
+      </td>
+    </tr>
+    {% endif %}
+    <tr>
+      <td>Food/Drink</td>
+      <td>Snacks and water will be provided</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>{{ cost }}</td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      {% if soldout %}<td class="sold-out">Sold Out!</td>{% else %}<td class="future">Spots Available (<a href="/classic-bracket-contact">I'm interested!</a>)</td>{% endif %}
+    </tr>
+  </table>
+</main>

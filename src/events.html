@@ -1,0 +1,28 @@
+---
+layout: default
+title: Events | Match Mingler
+css: /css/events.css
+---
+
+<main class="container">
+
+  <h1>Events</h1>
+  <h3>Upcoming Events</h3>
+  
+  <table>
+    {% for event in collections.event %}
+    <tr>
+        <td class="narrow">
+            <div>{{ event.data.location }}</div>
+            <div data-tooltip="{{ event.data.time }}" data-placement="bottom"><a href="{{ event.url | url }}">{{ event.data.day }}</a></div>
+        </td>
+        <td class="wide">{{ event.data.location }}</td>
+        <td class="wide"><span data-tooltip="{{ event.data.time }}" data-placement="bottom"><a href="{{ event.url | url }}">{{ event.data.day }}</a></span></td>
+        <td>{{ event.data.title }}</td>
+        {% if event.data.soldout %}<td class="sold-out">Sold Out!</td>{% else %}<td class="future">Spots Available</td>{% endif %}        
+    </tr>
+    {% endfor %}
+  </table>
+
+  <p>Please note: Events may be cancelled or postponed based on demand.</p>   
+</main>

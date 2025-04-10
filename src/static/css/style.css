@@ -1,0 +1,260 @@
+/* https://stackoverflow.com/questions/71731966/preventing-edge-from-showing-the-visual-search-icon-when-users-hover-over-an-ima */
+img {
+  pointer-events: none;
+}
+
+p,
+li {
+  color: var(--pico-muted-color);
+}
+
+form {
+  max-width: 576px;
+}
+
+textarea {
+  height: 250px;
+}
+
+.splash {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: var(--pico-block-spacing-horizontal);
+}
+
+.splash img {
+  max-width: 25%;
+}
+
+.splash h1 {
+  margin-bottom: 0;
+}
+
+.bg1 {
+  background:
+    linear-gradient(rgb(19, 23, 31, 0.7), rgb(19, 23, 31, 0.7)),
+    url("../img/bg1.png");
+}
+
+.bg2 {
+  background:
+    linear-gradient(rgb(19, 23, 31, 0.7), rgb(19, 23, 31, 0.7)),
+    url("../img/bg2.png");
+}
+
+.bg3 {
+  background:
+    linear-gradient(rgb(19, 23, 31, 0.7), rgb(19, 23, 31, 0.7)),
+    url("../img/bg3.png");
+}
+
+.events {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: dense;
+  gap: 2rem;
+  align-items: center;
+}
+
+.events > div {
+  display: flex;
+  align-items: center;
+}
+
+.event {
+  background-size: cover;
+  border-radius: 32px;
+  margin: 8px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event img {
+  width: 350px;
+}
+
+.event-small {
+  border-radius: 32px;
+  background-size: contain;
+  margin: 8px;
+  height: 200px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-small img {
+  width: 175px;
+}
+
+.event-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 64px;
+}
+
+nav {
+  max-width: 1300px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.brand {
+  color: #ff8c04;
+  font-size: 1.25rem;
+  font-family: "Hachi Maru Pop", serif;
+  font-weight: bold;
+}
+
+nav a {
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 16px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: var(--pico-mark-background-color);
+}
+
+nav a.menu {
+  display: none;
+}
+
+.about {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+.about img {
+  padding: 1rem 0;
+}
+
+@media not screen and (max-width: 1024px) {
+  .about {
+    grid-template-columns: 1fr 1fr;
+  }
+  .about :nth-child(3) {
+    grid-column: 1 / 3
+  }
+}
+
+@media screen and (max-width: 576px) {
+  nav a:not(:first-child) {
+    display: none;
+  }
+  nav a.menu {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  nav a.menu {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  nav.showmenu a {
+    float: none;
+    display: block;
+  }
+}
+
+input[name="botcheck"] {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  z-index: -1;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(250%, 0, 0) rotate3d(0, 0, 1, 200deg);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes revealLeft {
+  from {
+    width: 300px;
+  }
+
+  to {
+    width: 0;
+  }
+}
+
+.slideInLeft {
+  animation: slideInLeft 1.2s;
+  z-index: 1;
+}
+
+.splash > div {
+  position: relative;
+}
+
+.revealLeft {
+  animation: revealLeft 0.8s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-color: var(--pico-background-color);
+  width: 0;
+  height: 100%;  
+}
+
+.completed > td {
+  color: var(--pico-muted-color);
+  font-weight: lighter;
+}
+
+.future {
+  color: var(--pico-ins-color);
+}
+
+.sold-out {
+  color: var(--pico-del-color);
+}
+
+.namevalue {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: calc(var(--pico-spacing)/2) var(--pico-spacing);
+  gap: 0.5em var(--pico-spacing);
+}
+
+.namevalue div:nth-child(even) {
+  color:var(--pico-muted-color);
+}
+
+.info td:nth-child(1) {
+  white-space: nowrap;
+}
+
+.info td:nth-child(2) {
+  width: 100%;
+}
+
+.info small {
+  color: var(--pico-muted-color);
+}
