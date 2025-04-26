@@ -258,3 +258,9 @@ input[name="botcheck"] {
 .info small {
   color: var(--pico-muted-color);
 }
+
+#signupgenius {
+  width:200px;
+  margin: 30px 0;
+  display: block;
+}
