@@ -75,7 +75,9 @@ title: Event | Match Mingler
     </tr>
     <tr>
       <td>Status</td>
-      {% if soldout %}<td class="sold-out">Sold Out!</td>{% else %}<td class="future"><a href="/register">Register Now!</a></td>{% endif %}
+      {% if soldout %}<td class="sold-out">Sold Out!</td>{% else %}<td class="future">Available</td>{% endif %}
     </tr>
   </table>
+
+  {% if not soldout %}<a href="/register"><button>Register Now!</button></a>{% endif %}  
 </main>
